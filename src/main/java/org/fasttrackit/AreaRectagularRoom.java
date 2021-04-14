@@ -8,23 +8,32 @@ package org.fasttrackit;
 //        display the area in both square feet and square meters
 
 import java.text.DecimalFormat;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AreaRectagularRoom {
 
     public void calculateArea() {
-        System.out.println("What is the length of the room in feet?");
-        Scanner scanner = new Scanner(System.in);
-        double length = scanner.nextDouble();
-        System.out.println("What is the width of the room in feet?");
-        double width = scanner.nextDouble();
-        System.out.println("You entered dimensions of " + length + " feet by " + width + " feed.");
-        double feet = length * width;
-        double square = feet * 0.09290304;
-        DecimalFormat df = new DecimalFormat("#.###");
-        double value = Double.parseDouble(df.format(square));
+        double feet = 0;
+        double value = 0;
+        try {
+            System.out.println("What is the length of the room in feet?");
+            Scanner scanner = new Scanner(System.in);
+            double length = scanner.nextDouble();
+            System.out.println("What is the width of the room in feet?");
+            double width = scanner.nextDouble();
+            System.out.println("You entered dimensions of " + length + " feet by " + width + " feed.");
+            feet = length * width;
+            double square = feet * 0.09290304;
+            DecimalFormat df = new DecimalFormat("#.###");
+            value = Double.parseDouble(df.format(square));
+            System.out.println("The area is " + feet + "  square feet " + value + " square meters");
 
-        System.out.println("The area is " + feet + "  square feet " + value + " square meters");
+        } catch (NumberFormatException | InputMismatchException e) {
+            System.out.println("Please enter numbers.");
+        }
+
+
     }
 
     public static void main(String[] args) {
