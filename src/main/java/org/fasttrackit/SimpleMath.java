@@ -3,8 +3,12 @@ package org.fasttrackit;
 //        depending on the programming language you use, you’ll
 //        have to convert the inputs you get to numerical data types.
 //        Write a program that prompts for two numbers. Print the
-//        sum, difference, product, and quotient of those numbers as
-//        shown in the example output:
+//        sum, difference, product, and quotient of those numbers
+//    Revise the program to ensure that inputs are entered as
+//numeric values. Don’t allow the user to proceed if the
+//value entered is not numeric.
+//Don’t allow the user to enter a negative number
+
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -18,6 +22,11 @@ public class SimpleMath {
             int number1 = scanner.nextInt();
             System.out.println("What is the second number?:");
             int number2 = scanner.nextInt();
+
+            if (number1 < 0 || number2 < 0) {
+                throw new IllegalArgumentException("Numbers cannot be negative.");
+            }
+
             int sum = number1 + number2;
             System.out.println(number1 + "+" + number2 + "=" + sum);
             int dif = number1 - number2;
@@ -25,15 +34,13 @@ public class SimpleMath {
             int multiply = number1 * number2;
             System.out.println(number1 + "*" + number2 + "=" + multiply);
             int div = number1 / number2;
-            if(number1 ==0 || number2 ==0) div=0;
             System.out.println(number1 + "/" + number2 + "=" + div);
-            return number1+number2;
+            return sum;
 
 
-        } catch (InputMismatchException e) {
-            System.out.println("Please introduce a number:");
+        } catch (InputMismatchException | ArithmeticException | IllegalArgumentException e) {
+            System.out.println("Please introduce  numbers or numbers greater than zero.");
             return dealNumbers();
-
         }
     }
 
