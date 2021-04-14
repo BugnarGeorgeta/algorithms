@@ -1,5 +1,5 @@
 package org.fasttrackit;
-//Your computer knows what the current yearis, which means
+//Your computer knows what the current year is, which means
 //        you can incorporate that into your programs. You just have
 //        to figure out how your programming language can provide
 //        you with that information.

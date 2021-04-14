@@ -7,6 +7,7 @@ package org.fasttrackit;
 //        the user for the length and width of the room in feet. Then
 //        display the area in both square feet and square meters
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class AreaRectagularRoom {
@@ -20,7 +21,10 @@ public class AreaRectagularRoom {
         System.out.println("You entered dimensions of " + length + " feet by " + width + " feed.");
         double feet = length * width;
         double square = feet * 0.09290304;
-        System.out.println("The area is " + feet + "  square feet " + square + " square meters");
+        DecimalFormat df = new DecimalFormat("#.###");
+        double value = Double.parseDouble(df.format(square));
+
+        System.out.println("The area is " + feet + "  square feet " + value + " square meters");
     }
 
     public static void main(String[] args) {
