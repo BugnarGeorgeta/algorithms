@@ -26,7 +26,7 @@ public class SelfCheckout {
         double subtotal = (price1 * quantity1) + (price2 * quantity2) + (price3 * quantity3);
         double tax = (subtotal * 5.5) / 100;
         double total = subtotal + tax;
-        System.out.println("The subtotatal :  " + subtotal + " Tax is: " + tax + " and total is: " + total + ".");
+        System.out.println("The subtotal :  " + subtotal + " Tax is: " + tax + " and total is: " + total + ".");
 
     }
 

@@ -17,9 +17,9 @@ public class CurrencyConversion {
         double euro = scanner.nextDouble();
         System.out.println("What is the exchange rate?");
         double rate = scanner.nextDouble();
-        double dolar =(euro * rate) / 100;
-         double dolarex= Math.ceil((euro * rate) / 100);
-        System.out.println(euro + " euros at an exchange rate of " + rate + " is " + dolar +" respectively " +dolarex+" U.S. dollars.");
+        int dollar = (int) Math.ceil((euro * rate) / 100);
+
+        System.out.println(euro + " euros at an exchange rate of " + rate + " is " + dollar + " U.S. dollars.");
 
     }
 

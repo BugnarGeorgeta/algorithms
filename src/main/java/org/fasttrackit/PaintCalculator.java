@@ -11,7 +11,8 @@ import java.util.Scanner;
 public class PaintCalculator {
 
     public void getNumberOfGallons() {
-        System.out.println("For calculate the number of gallons for your room ,please give me some information.");
+        System.out.println("For calculate the number of gallons for your room ," +
+                "please give me some information.");
         System.out.println("What is length in feet of your room?");
         Scanner scanner = new Scanner(System.in);
         double length = scanner.nextDouble();
