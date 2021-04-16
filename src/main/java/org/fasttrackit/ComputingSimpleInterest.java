@@ -9,6 +9,8 @@ package org.fasttrackit;
 //        at the end of the investment.
 //• Ensure that fractions of a cent are rounded up to the
 //next penny.
+//In addition to printing out the final amount, print out
+//        the amount at the end of each year.
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
