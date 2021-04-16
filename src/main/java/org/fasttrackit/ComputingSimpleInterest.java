@@ -8,9 +8,11 @@ package org.fasttrackit;
 //        number of years the amount is invested, and A is the amount
 //        at the end of the investment.
 //• Ensure that fractions of a cent are rounded up to the
+//next penny.In addition to printing out the final amount, print out
+// the amount at the end of each year.Ensure that the values entered for principal, rate, and
+//number of years are numeric and that the program will
+//not let the user proceed without valid inputs.Ensure that fractions of a cent are rounded up to the
 //next penny.
-//In addition to printing out the final amount, print out
-//        the amount at the end of each year.
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

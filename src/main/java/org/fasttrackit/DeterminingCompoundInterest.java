@@ -2,7 +2,12 @@ package org.fasttrackit;
 //Write a program to compute the value of an investment
 //        compounded over time. The program should ask for the
 //        starting amount, the number of years to invest, the interest
-//        rate, and the number of periods per year to compound.
+//        rate, and the number of periods per year to compound.Ensure that fractions of a cent are rounded up to the
+//next penny.
+//• Ensure that the output is formatted as money.• Ensure that all of the inputs are numeric and that the
+//program will not let the user proceed without valid
+//inputs.
+
 
 
 import java.util.InputMismatchException;
@@ -24,8 +29,8 @@ public class DeterminingCompoundInterest {
 
             double result1 = 1 + ((rate / 100) / yearComp);
             double result2 = Math.pow(result1, yearComp * year);
-            double compoundInteres = principal * result2;
-            double result = Math.ceil(compoundInteres * 100) / 100;
+            double compoundInterest = principal * result2;
+            int result =(int) Math.ceil(compoundInterest * 100) / 100;
 
             System.out.println(" $" + principal + " invested at " + rate + "% for " + year
                     + " years compounded " + yearComp + " times per year is $" + result + ".");
