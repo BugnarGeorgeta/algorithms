@@ -27,7 +27,7 @@ public class MultistateSalesTaxCalculato {
             System.out.println("What state do you live in: ");
             String state = scanner.nextLine();
             if (scanner.nextLine().equalsIgnoreCase("Wisconsin")) {
-                System.out.println("What county in Wisconsin?");
+                System.out.println("What county of residence in Wisconsin?");
                 String county = scanner.nextLine();
 
                 if (county.equalsIgnoreCase("Eau Claire")) {
@@ -52,7 +52,7 @@ public class MultistateSalesTaxCalculato {
                 System.out.println("The total  is $" + amount + ".");
             }
         } catch (InputMismatchException e) {
-            System.out.println("Please enter the corectly data");
+            System.out.println("Please enter the correctly data");
         }
     }
 

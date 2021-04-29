@@ -12,22 +12,21 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BMICalculator {
-    public double calculateBodyMass() {
-        double bmi;
-        System.out.println("Please enter your height in metres, please use the point :");
-        Scanner scanner = new Scanner(System.in);
+    public void calculateBodyMass() {
         try {
+            System.out.println("Please enter your height in metres, please use the point :");
+            Scanner scanner = new Scanner(System.in);
             double height = scanner.nextDouble();
             System.out.println("Please enter  your weight in kilograms :");
             double weight = scanner.nextDouble();
 
             if (weight == 0 || height == 0) {
-                System.out.println("Please enter the data corectly !");
-                return  calculateBodyMass();
+                System.out.println("Please enter the data correctly !");
+                calculateBodyMass();
             }
 
             double result = (weight / (height * height));
-            bmi = result;
+
             System.out.println("Your BMI is " + result + ".");
 
 
@@ -42,10 +41,9 @@ public class BMICalculator {
             }
 
         } catch (InputMismatchException e) {
-            System.out.println("Please enter the corect data.");
-            return calculateBodyMass();
+            System.out.println("Please enter the correct data.");
+            calculateBodyMass();
         }
-        return bmi;
     }
 
     public static void main(String[] args) {
