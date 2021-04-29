@@ -6,6 +6,7 @@ package org.fasttrackit;
 //        formula
 //        BAC = (A × 5.14 / W × r) − .015 × H
 
+import java.text.DecimalFormat;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -16,26 +17,29 @@ public class BloodAlcoholCalculator {
         try {
             double alcohol = scanner.nextDouble();
             alcohol = alcohol / 28.57;///formula este in uncii,1uncie alcool= 28.57 ml;in Ro e mai usor de masurat in ml;
-            System.out.println("Your weight in ponds :");
-            double weight = scanner.nextDouble();
+            System.out.println("Your weight in kg :");
+            double weight = scanner.nextDouble();//1kg=2.205 pounds
             System.out.println("You are a man?please enter true or false");
-            boolean sex = scanner.nextBoolean();
+            boolean man = scanner.nextBoolean();
             System.out.println("Number of hours since the last drink:");
             double hours = scanner.nextDouble();
             double r;
-            if (sex == true) {
+            if (man) {
                 r = 0.73;
-            }
-            r = 0.66;
-            double BAC = (alcohol * 5.14 / weight * r) - .015 * hours;
-
-            if (BAC >= 0.08) {
-                System.out.println("Your BAC is " + BAC + " It is NOT legal for you to drive.");
             } else {
-                System.out.println("Your BAC is " + BAC + " It is  legal for you to drive.");
+                r = 0.66;
+            }
+            double BAC = (alcohol * 5.14 / (weight * 2.205) * r) - .015 * hours;
+            DecimalFormat df = new DecimalFormat("#.##");
+            double value = Double.parseDouble(df.format(BAC));
+
+            if (value >= 0.08) {
+                System.out.println("Your BAC is " + value + " It is NOT legal for you to drive.");
+            } else {
+                System.out.println("Your BAC is " + value + " It is  legal for you to drive.");
             }
         } catch (InputMismatchException e) {
-            System.out.println("Please enter the data corectly");
+            System.out.println("Please enter the data correctly");
         }
     }
 
